@@ -75,7 +75,7 @@ body {
 }
 
 .Text_anim {
-  animation: text_throw 2s 1s ease-in-out;
+  animation: text_throw 2s 0.5s ease-in-out;
   transition: 1s;
   animation-fill-mode: forwards;
 }
