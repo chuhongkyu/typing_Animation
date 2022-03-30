@@ -1,4 +1,5 @@
 let target = document.querySelector("#dynamic");
+let Textbox = document.querySelector(".text_box");
 
 function randomString(){
     let stringArr = ["Lear to HTML","Lear to CSS","Lear to JAVA","Lear to Recycle"];
@@ -53,14 +54,14 @@ let count = 0;
 
 function NumberUP(){
     let counting = setInterval(function(){
-        if(count == 999){
+        if(count == 1299){
             console.log(count);
-            document.body.style.backgroundImage = 'linear-gradient(to bottom, whihe, white)';
+            Textbox.classList.add("Text_anim")
             clearInterval(counting);
             return false;
         }
         count += 1;
         NumberBox.innerHTML = new Intl.NumberFormat().format(count);
-    }, 10);
+    }, 5);
 }
 NumberUP();
