@@ -27,15 +27,34 @@ body {
   text-shadow: rgba(247, 246, 244, 0.507) 1px 0 10px;
 }
 
-h1 :first-child {
+.material_2 {
+  display: flex;
+  align-items: center;
+  font-size: 10rem;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wheel {
   animation: recycle 7s ease-in-out infinite;
 }
 
 img {
-  filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg)
-    brightness(95%) contrast(101%);
-  width: 120px;
-  height: 120px;
+  filter: invert(100%) sepia(0%) saturate(7487%) hue-rotate(182deg)
+    brightness(113%) contrast(100%);
+  width: 150px;
+  height: 150px;
 }
 
 .color {
