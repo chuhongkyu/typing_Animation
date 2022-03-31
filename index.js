@@ -65,3 +65,4 @@ function NumberUP(){
     }, 5);
 }
 NumberUP();
+

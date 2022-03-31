@@ -24,9 +24,22 @@ body {
 
 .material-icons {
   font-size: 10rem;
-  animation: recycle 7s ease-in-out infinite;
-  cursor: pointer;
   text-shadow: rgba(247, 246, 244, 0.507) 1px 0 10px;
+}
+
+h1 :first-child {
+  animation: recycle 7s ease-in-out infinite;
+}
+
+img {
+  filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg)
+    brightness(95%) contrast(101%);
+  width: 120px;
+  height: 120px;
+}
+
+.color {
+  color: tomato;
 }
 
 .lg-text {
