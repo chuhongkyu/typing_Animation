@@ -36,12 +36,14 @@ body {
 }
 
 .text_box {
+  width: 400px;
   display: flex;
   justify-content: center;
 }
 
 .sm-text {
   font-size: 1.5rem;
+  word-break: nowrap;
 }
 
 #dynamic {
@@ -85,6 +87,7 @@ body {
   }
 
   100% {
-    transform: translateX(-120px) scale(2);
+    color: red;
+    font-weight: 800;
   }
 }
