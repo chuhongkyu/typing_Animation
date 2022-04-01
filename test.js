@@ -1,17 +1,18 @@
-// const catName = "나비야"; 
-
-// console.log(catName, '이리오렴');
-// console.log(catName + " 이리오렴");
-// console.log(`${catName} 이리오렴`);
-
-// for(let i=0; i<3; i++ ){
-//     console.log(catName, '이리오렴 반복이다');
-// }
-
 const catNames = ["나비야", "고양시", "길냥이"]; 
 
-console.log(catNames.length);
+let counter =0;
 
-for(let i= 0; i< catNames.length; i++){
-   console.log(catNames[i]);
+function callName(){
+    console.log(catNames[1]);
+    counter++;
+    console.log(counter);
+
+    if(counter == 3){
+    clearInterval(callInterval);
+ }
 }
+   
+let callInterval = setInterval(callName ,3000);
+
+
+
