@@ -123,3 +123,27 @@ img {
     font-weight: 800;
   }
 }
+
+h3{
+  margin-top: 25px;
+}
+
+h3 a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  padding: 7px 15px;
+  background-color: goldenrod;
+  border-radius: 25px;
+}
+
+h3:hover{
+  transform: translateY(-3px);
+  transition: 0.5s;
+}
+
+h3 a:hover{
+  background-color: white;
+  color: goldenrod;
+  transition: 0.5s;
+}
