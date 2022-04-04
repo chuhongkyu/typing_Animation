@@ -24,19 +24,16 @@ body{
     width: 200px;
     height: 200px;
     font-size: 60px;
-    color: black;
     text-align: center;
     line-height: 200px;
     transform-style: preserve-3d;
     cursor: pointer;
     animation: rotateEveryOne 3s 1s ease-in-out infinite;
     transition: 1s;
-}
-
-.flip-btn:hover{
-    transform: rotateX(-360deg);
-    transition: 1s;
-    animation: none;
+    color: white;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 .flip-btn div{
