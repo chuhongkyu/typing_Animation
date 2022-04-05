@@ -36,3 +36,10 @@ const callInterval = setInterval(()=>{
 } ,1000);
 
 
+let A = "10";
+let B = 4;
+
+console.log(A/B);
+console.log(parseInt(A));
+
+

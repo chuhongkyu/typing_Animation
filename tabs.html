@@ -6,114 +6,103 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <style>
-            * {
-                box-sizing: border-box;
-            }
             body {
                 font-family: "Lato", sans-serif;
             }
 
-            /* Style the tab */
-            .tab {
+            .tablink {
+                background-color: #555;
+                color: white;
                 float: left;
-                border: 1px solid #ccc;
-                background-color: #f1f1f1;
-                width: 30%;
-                /* width: 100%; */
-                height: 300px;
-            }
-
-            /* Style the buttons inside the tab */
-            .tab button {
-                /* float: left; */
-                display: block;
-                background-color: inherit;
-                color: black;
-                padding: 22px 16px;
-                width: 100%;
                 border: none;
                 outline: none;
-                text-align: left;
                 cursor: pointer;
-                transition: 0.3s;
+                padding: 14px 16px;
                 font-size: 17px;
+                width: 25%;
             }
 
-            /* Change background color of buttons on hover */
-            .tab button:hover {
-                background-color: #ddd;
-            }
-
-            /* Create an active/current "tab button" class */
-            .tab button.active {
-                background-color: #ccc;
+            .tablink:hover {
+                background-color: #777;
             }
 
             /* Style the tab content */
             .tabcontent {
-                float: left;
-                padding: 0 12px;
-                border: 1px solid #ccc;
-                width: 70%;
-                border-left: none;
-                height: 300px;
+                color: white;
+                display: none;
+                padding: 50px;
+                text-align: center;
+            }
+
+            #London {
+                background-color: red;
+            }
+            #Paris {
+                background-color: green;
+            }
+            #Tokyo {
+                background-color: blue;
+            }
+            #Oslo {
+                background-color: orange;
             }
         </style>
 
     </head>
     <body>
-        <h2>Vertical Tabs</h2>
-        
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-            <button class="tablinks" onclick="openCity(event, 'Seoul')" id="defaultOpen">Seoul</button>
-        </div>
+        <p>Click on the buttons inside the tabbed menu:</p>
         
         <div id="London" class="tabcontent">
-            <h3>London</h3>
+            <h1>London</h1>
             <p>London is the capital city of England.</p>
         </div>
         
         <div id="Paris" class="tabcontent">
-            <h3>Paris</h3>
+            <h1>Paris</h1>
             <p>Paris is the capital of France.</p>
         </div>
         
         <div id="Tokyo" class="tabcontent">
-            <h3>Tokyo</h3>
+            <h1>Tokyo</h1>
             <p>Tokyo is the capital of Japan.</p>
         </div>
-
-        <div id="Seoul" class="tabcontent">
-            <h3>Seoul</h3>
-            <p>Seoul is the capital of Korea</p>
+        
+        <div id="Oslo" class="tabcontent">
+            <h1>Oslo</h1>
+            <p>Oslo is the capital of Norway.</p>
         </div>
+        
+        <!-- 클릭하면 openCity 함수가 실행 -->
+        <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
+        <button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
+        <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
+        <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+
     </body>
     <script>
-        function openCity(evt, cityName) {
+        function openCity(cityName, elmnt, color) {
 
                 let i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
 
-                console.log(evt);
+                tabcontent = document.getElementsByClassName("tabcontent");
 
                 for (i = 0; i < tabcontent.length; i++) {
                     tabcontent[i].style.display = "none";
                 }
+                // tabcontent들의 스타일을 논으로
 
-                tablinks = document.getElementsByClassName("tablinks");
+                tablinks = document.getElementsByClassName("tablink");
 
                 for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    tablinks[i].style.backgroundColor = "";
                 }
+                // tablinks의 백그라운드 칼러를 빈칸으로
 
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
+                document.getElementById(cityName).style.display = "block"; // 스타일을 다시 보여지게
+                elmnt.style.backgroundColor = color;
+
             }
-
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
+            // 저 아이디를 가진 얘를 클릭
+            document.getElementById("defaultOpen").click();  
     </script>
 </html>
