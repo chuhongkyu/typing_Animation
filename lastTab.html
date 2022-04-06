@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,9 +72,6 @@
         </nav>
 
         <script>
-            window.onresize = function(){
-                document.location.reload();
-            };
 
             let horizontalBar = document.getElementById("horizontal_bar");
             let horizontalMenus = document.querySelectorAll("nav:first-child a");
@@ -101,6 +98,10 @@
             verticalMenus.forEach(
                 (menu) => menu.addEventListener("click", (e) => verticalIndicator(e.currentTarget))
             );
+
+            window.onresize = function () {
+                    document.location.reload(); 
+            };
 
             document.getElementById("defaultOpen").click();
             document.getElementById("defaultOpen2").click();
