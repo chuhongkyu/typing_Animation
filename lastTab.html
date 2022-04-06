@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            nav a {
+                /* list-style: none; */
+                text-decoration: none;
+                color: black;
+                font-size: 1em;
+                margin: 2rem;
+            }
+
+            nav:first-child {
+                display: flex;
+                justify-content: center;
+            }
+
+            nav:nth-child(2) {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            #horizontal_bar {
+                position: absolute;
+                width: 0;
+                height: 4px;
+                background-color: pink;
+                top: 0;
+                left: 0;
+                transition: 0.5s;
+            }
+
+            #vertical_bar {
+                position: absolute;
+                left: 0;
+                height: 4px;
+                width: 0;
+                border-radius: 3px;
+                transition: 0.5s;
+                background-color: skyblue;
+                top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div id="horizontal_bar"></div>
+            <a id="defaultOpen" href="#">About</a>
+            <a href="#">Menu</a>
+            <a href="#">Store</a>
+            <a href="#">Service</a>
+            <a href="#">Responsibility</a>
+        </nav>
+        <nav>
+            <div id="vertical_bar"></div>
+            <a id="defaultOpen2" href="#">About</a>
+            <a href="#">Menu</a>
+            <a href="#">Store</a>
+            <a href="#">Service</a>
+            <a href="#">Responsibility</a>
+
+        </nav>
+
+        <script>
+            window.onresize = function(){
+                document.location.reload();
+            };
+
+            let horizontalBar = document.getElementById("horizontal_bar");
+            let horizontalMenus = document.querySelectorAll("nav:first-child a");
+
+            let verticalBar = document.getElementById("vertical_bar");
+            let verticalMenus = document.querySelectorAll("nav:nth-child(2) a");
+
+            horizontalMenus.forEach(
+                (item) => item.addEventListener("click", (e) => horizontalIndicator(e))
+            );
+
+            function horizontalIndicator(e) {
+                    horizontalBar.style.left = e.target.offsetLeft + "px";
+                    horizontalBar.style.width = e.target.offsetWidth + "px";
+                    horizontalBar.style.top = e.target.offsetTop + e.target.offsetHeight + "px";       
+            };
+
+            function verticalIndicator(e) {
+                verticalBar.style.left = e.offsetLeft + "px";
+                verticalBar.style.width = e.offsetWidth + "px";
+                verticalBar.style.top = e.offsetTop + e.offsetHeight + "px";
+            }
+
+            verticalMenus.forEach(
+                (menu) => menu.addEventListener("click", (e) => verticalIndicator(e.currentTarget))
+            );
+
+            document.getElementById("defaultOpen").click();
+            document.getElementById("defaultOpen2").click();
+
+        </script>
+    </body>
+</html>

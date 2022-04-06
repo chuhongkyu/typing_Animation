@@ -89,20 +89,23 @@
                 for (i = 0; i < tabcontent.length; i++) {
                     tabcontent[i].style.display = "none";
                 }
-                // tabcontent들의 스타일을 논으로
+                // tabcontent들의 스타일을 논으로 그래서 전부 안보여짐
 
                 tablinks = document.getElementsByClassName("tablink");
 
                 for (i = 0; i < tablinks.length; i++) {
                     tablinks[i].style.backgroundColor = "";
                 }
-                // tablinks의 백그라운드 칼러를 빈칸으로
+                // tablinks의 백그라운드 칼러를 빈칸으로 만들어라.
 
-                document.getElementById(cityName).style.display = "block"; // 스타일을 다시 보여지게
+                document.getElementById(cityName).style.display = "block"; 
+                //cityName과 일치하는 tabcontent 만 BLock으로 해서 다시 보여줌.
                 elmnt.style.backgroundColor = color;
+                //this 누른애의 백그라운드 칼러를 openCity 함수의 파라미터 컬러로 바꿔줌.
 
             }
-            // 저 아이디를 가진 얘를 클릭
+    
             document.getElementById("defaultOpen").click();  
+            //가장 먼저 디폴트 클릭
     </script>
 </html>
