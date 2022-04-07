@@ -153,3 +153,18 @@ p{
     }
     
 }
+
+@media screen and (max-width: 768px) {
+    .photo_card{
+        display: none;
+        transition: 1s;
+    }
+
+    #LeftBox {
+        font-family: sans-serif;
+        top: 30%;
+        left: 30%;
+        transition: 1s;
+    }
+}
+
