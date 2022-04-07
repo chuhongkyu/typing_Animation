@@ -37,7 +37,7 @@
                 background-color: pink;
                 top: 0;
                 left: 0;
-                transition: 0.1s;
+                transition: 0.2s;
             }
 
             #vertical_bar {
@@ -46,7 +46,7 @@
                 height: 4px;
                 width: 0;
                 border-radius: 3px;
-                transition: 0.1s;
+                transition: 0.2s;
                 background-color: skyblue;
                 top: 0;
             }
@@ -100,6 +100,11 @@
                 (item) => item.addEventListener("click", (e) => horizontalIndicator(e))
             );
 
+            verticalMenus.forEach(
+                    (item) => item.addEventListener("click", (e) => verticalIndicator(e))
+                );
+
+
             function horizontalIndicator(e) {
                     horizontalBar.style.left = e.target.offsetLeft + "px";
                     horizontalBar.style.width = e.target.offsetWidth + "px";
@@ -114,10 +119,7 @@
                 VERTICAL_Target = e.target; 
             }
 
-            verticalMenus.forEach(
-                (item) => item.addEventListener("click", (e) => verticalIndicator(e))
-            );
-
+            
            
         </script>
     </body>
