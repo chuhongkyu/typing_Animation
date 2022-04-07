@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 2000px;
+    background-color: bisque;
+}
+.first_section{
+    height: 300px;
+    background-color: #fad6ca;
+    background-image: url(/img/reserve_2022_indonesia_visual3.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.main_section{
+    width: 100%;
+    height: 800px;
+    background: url(/img/fav_prod_bg_new.jpg) fixed;
+    background-position: bottom right;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.last_section{
+    height: 300px;
+    background-color: #fad6ca;
+    background-image: url(/img/reserve_2022_indonesia_visual3.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.photo_card{
+    position: relative;
+    top: 80px;
+    right: 150px;
+    animation: RightBoxMove 1s ease-out;
+    transition: 1s;
+}
+
+#LeftBox{
+    width: 258px;
+    color: white;
+    font-family: sans-serif;
+    position: relative;
+    top: 80px;
+    left: 150px;
+    animation: LeftBoxMove 1s ease-out;
+    transition: 1s;
+}
+
+.Title{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.subTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-end;
+    font-family: sans-serif;
+    margin-top: 10px;
+}
+
+h1{
+    font-size: 6em;
+}
+
+h2{
+    font-size: 5em;
+}
+
+h3{
+    font-size: 3em;
+}
+
+h5{
+    font-size: 1em;
+}
+
+p{
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.button{
+    margin-top: 20px;
+    padding: 5px 16px;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 5px; 
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+@keyframes LeftBoxMove {
+    from{
+        left: -200px;
+        opacity: 0;
+    }
+    to{
+        left: 150px;
+        opacity: 1;
+    }
+}
+
+@keyframes LeftBoxDisappear {
+    from {
+        left: 150px;
+        opacity: 1;
+    }
+
+    to {
+        left: -200px;
+        opacity: 0;
+    }
+}
+
+@keyframes RightBoxMove {
+    from {
+        right: -200px;
+        opacity: 0;
+    }
+    
+    to {
+        right: 150px;
+        opacity: 1;
+    }
+    
+}
+
+@keyframes RightBoxDisappear {
+    from {
+        right: 150px;
+        opacity: 1;
+    }
+    
+    to {
+        right: -200px;
+        opacity: 0;
+    }
+    
+}
