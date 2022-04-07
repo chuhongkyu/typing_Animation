@@ -75,8 +75,14 @@
             let HORIZONTAL_Target;
             let VERTICAL_Target;
 
+            let horizontalBar = document.getElementById("horizontal_bar");
+            let horizontalMenus = document.querySelectorAll("nav:first-child a");
+
+            let verticalBar = document.getElementById("vertical_bar");
+            let verticalMenus = document.querySelectorAll("nav:nth-child(2) a");
+
             function menuClick(menu) {
-                    document.getElementById(menu).click();
+                document.getElementById(menu).click();
             }
 
             window.onload = ()=>{
@@ -85,31 +91,23 @@
             }
 
              window.onresize = function () {
-                    HORIZONTAL_Target.click();
-                    VERTICAL_Target.click();
+                HORIZONTAL_Target.click();
+                VERTICAL_Target.click();
             };
-
-
-            let horizontalBar = document.getElementById("horizontal_bar");
-            let horizontalMenus = document.querySelectorAll("nav:first-child a");
-
-            let verticalBar = document.getElementById("vertical_bar");
-            let verticalMenus = document.querySelectorAll("nav:nth-child(2) a");
 
             horizontalMenus.forEach(
                 (item) => item.addEventListener("click", (e) => horizontalIndicator(e))
             );
 
             verticalMenus.forEach(
-                    (item) => item.addEventListener("click", (e) => verticalIndicator(e))
-                );
-
+                (item) => item.addEventListener("click", (e) => verticalIndicator(e))
+            );
 
             function horizontalIndicator(e) {
-                    horizontalBar.style.left = e.target.offsetLeft + "px";
-                    horizontalBar.style.width = e.target.offsetWidth + "px";
-                    horizontalBar.style.top = e.target.offsetTop + e.target.offsetHeight + "px";
-                    HORIZONTAL_Target = e.target;       
+                horizontalBar.style.left = e.target.offsetLeft + "px";
+                horizontalBar.style.width = e.target.offsetWidth + "px";
+                horizontalBar.style.top = e.target.offsetTop + e.target.offsetHeight + "px";
+                HORIZONTAL_Target = e.target;       
             };
 
             function verticalIndicator(e) {
@@ -118,9 +116,7 @@
                 verticalBar.style.top = e.target.offsetTop + e.target.offsetHeight + "px";
                 VERTICAL_Target = e.target; 
             }
-
-            
-           
+      
         </script>
     </body>
 </html>
