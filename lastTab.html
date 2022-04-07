@@ -37,7 +37,7 @@
                 background-color: pink;
                 top: 0;
                 left: 0;
-                transition: 0.5s;
+                transition: 0.1s;
             }
 
             #vertical_bar {
@@ -46,7 +46,7 @@
                 height: 4px;
                 width: 0;
                 border-radius: 3px;
-                transition: 0.5s;
+                transition: 0.1s;
                 background-color: skyblue;
                 top: 0;
             }
@@ -72,6 +72,23 @@
         </nav>
 
         <script>
+            let HORIZONTAL_Target;
+            let VERTICAL_Target;
+
+            function menuClick(menu) {
+                    document.getElementById(menu).click();
+            }
+
+            window.onload = ()=>{
+                menuClick("defaultOpen");
+                menuClick("defaultOpen2");
+            }
+
+             window.onresize = function () {
+                    HORIZONTAL_Target.click();
+                    VERTICAL_Target.click();
+            };
+
 
             let horizontalBar = document.getElementById("horizontal_bar");
             let horizontalMenus = document.querySelectorAll("nav:first-child a");
@@ -86,26 +103,22 @@
             function horizontalIndicator(e) {
                     horizontalBar.style.left = e.target.offsetLeft + "px";
                     horizontalBar.style.width = e.target.offsetWidth + "px";
-                    horizontalBar.style.top = e.target.offsetTop + e.target.offsetHeight + "px";       
+                    horizontalBar.style.top = e.target.offsetTop + e.target.offsetHeight + "px";
+                    HORIZONTAL_Target = e.target;       
             };
 
             function verticalIndicator(e) {
-                verticalBar.style.left = e.offsetLeft + "px";
-                verticalBar.style.width = e.offsetWidth + "px";
-                verticalBar.style.top = e.offsetTop + e.offsetHeight + "px";
+                verticalBar.style.left = e.target.offsetLeft + "px";
+                verticalBar.style.width = e.target.offsetWidth + "px";
+                verticalBar.style.top = e.target.offsetTop + e.target.offsetHeight + "px";
+                VERTICAL_Target = e.target; 
             }
 
             verticalMenus.forEach(
-                (menu) => menu.addEventListener("click", (e) => verticalIndicator(e.currentTarget))
+                (item) => item.addEventListener("click", (e) => verticalIndicator(e))
             );
 
-            window.onresize = function () {
-                    document.location.reload(); 
-            };
-
-            document.getElementById("defaultOpen").click();
-            document.getElementById("defaultOpen2").click();
-
+           
         </script>
     </body>
 </html>
