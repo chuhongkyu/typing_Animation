@@ -16,3 +16,4 @@ function printpet(item, index, array){
 //     console.log(item, index, array);
 // });
 
+pets.
