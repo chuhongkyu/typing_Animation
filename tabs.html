@@ -26,48 +26,54 @@
                 background-color: #777;
             }
 
-            /* Style the tab content */
             .tabcontent {
                 color: white;
-                display: none;
                 padding: 50px;
                 text-align: center;
             }
 
-            #London {
+            .London {
                 background-color: red;
             }
-            #Paris {
+            .Paris {
                 background-color: green;
             }
-            #Tokyo {
+            .Tokyo {
                 background-color: blue;
             }
-            #Oslo {
+            .Oslo {
                 background-color: orange;
+            }
+
+            .hidden{
+                display: none;
+            }
+
+            .long{
+                height: 500px;
             }
         </style>
 
     </head>
     <body>
-        <p>Click on the buttons inside the tabbed menu:</p>
+        <p>합친 텝이다</p>
         
-        <div id="London" class="tabcontent">
+        <div class="London tabcontent">
             <h1>London</h1>
             <p>London is the capital city of England.</p>
         </div>
         
-        <div id="Paris" class="tabcontent">
+        <div class="Paris tabcontent">
             <h1>Paris</h1>
             <p>Paris is the capital of France.</p>
         </div>
         
-        <div id="Tokyo" class="tabcontent">
+        <div class="Tokyo tabcontent">
             <h1>Tokyo</h1>
             <p>Tokyo is the capital of Japan.</p>
         </div>
         
-        <div id="Oslo" class="tabcontent">
+        <div  class="Oslo tabcontent">
             <h1>Oslo</h1>
             <p>Oslo is the capital of Norway.</p>
         </div>
@@ -78,18 +84,39 @@
         <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
         <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
 
+        <div class="London tabcontent long">
+            <h3>Home</h3>
+            <p>Home is where the heart is..</p>
+        </div>
+        
+        <div class="Paris tabcontent long">
+            <h3>News</h3>
+            <p>Some news this fine day!</p>
+        </div>
+        
+        <div class="Tokyo tabcontent long">
+            <h3>Contact</h3>
+            <p>Get in touch, or swing by for a cup of coffee.</p>
+        </div>
+        
+        <div class="Oslo tabcontent long">
+            <h3>About</h3>
+            <p>Who we are and what we do.</p>
+        </div>
+
     </body>
     <script>
         function openCity(cityName, elmnt, color) {
 
                 let i, tabcontent, tablinks;
+                let city = document.getElementsByClassName(cityName);
 
                 tabcontent = document.getElementsByClassName("tabcontent");
 
                 for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
+                    tabcontent[i].classList.add("hidden");
                 }
-                // tabcontent들의 스타일을 논으로 그래서 전부 안보여짐
+                // tabcontent들의 클래스 리스트에 "히든"클래스를 추가//
 
                 tablinks = document.getElementsByClassName("tablink");
 
@@ -98,8 +125,14 @@
                 }
                 // tablinks의 백그라운드 칼러를 빈칸으로 만들어라.
 
-                document.getElementById(cityName).style.display = "block"; 
-                //cityName과 일치하는 tabcontent 만 BLock으로 해서 다시 보여줌.
+                for(i = 0; i< city.length; i++) {
+                     city[i].classList.remove("hidden");
+                     //city[i]에 클래스리스트에서 "히든"삭제 고로 다시 보여짐
+                }
+                // document.getElementsByClassName(cityName)[0].classList.remove("hidden");
+                // document.getElementsByClassName(cityName)[1].classList.remove("hidden");
+                // 요거 for 반복문 한거임
+
                 elmnt.style.backgroundColor = color;
                 //this 누른애의 백그라운드 칼러를 openCity 함수의 파라미터 컬러로 바꿔줌.
 

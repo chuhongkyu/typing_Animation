@@ -3,11 +3,13 @@
     padding: 0;
     margin: 0;
 }
+
 body{
     width: 100%;
     height: 2000px;
     background-color: bisque;
 }
+
 .first_section{
     height: 300px;
     background-color: #fad6ca;
