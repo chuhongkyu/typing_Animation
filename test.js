@@ -19,7 +19,6 @@ let counter = 0;
 
 const callInterval = setInterval(()=>{
 
-
      for(let i =0; i< catNames.length; i++){
         console.log(catNames[i])
     }
