@@ -1,37 +1,35 @@
+///오늘 2022-04-11
+
+const Menu = ["라면", "도시락", "짜장면", "써브웨이", "햄버거"];
+
+console.log(`Menu 종류 : ${Menu.length}`);
+
+let num1 = Math.random();
+let num2 = Math.floor(num1);
+let num3 = Math.floor(num1 * Menu.length);
+let num4 = Math.floor(Math.random() * Menu.length);
+
+// console.log("0/1 랜덤 : " + num1);
+// console.log("Floor  0 : " + num2);
+// console.log("정수 랜덤 : " + num3);
+// console.log("진짜 랜덤 : " + num4);
 
 
-// console.log(pets);
+// for(let i = 0; i< Menu.length; i++){
+//     if(i === 2){
+//     console.log(Menu[i].toString());
+//   }
+// }  
 
-// for(let i = 0; i < pets.length; i++){
-//     console.log(i + pets[i]);
+// for(let i =0; i< Menu.length; i++){
+//     if(num4 == i){
+//         console.log(num4);
+//         console.log(Menu[i]);
+//     }
 // }
 
-// pets.forEach(printpet);
-
-// function printpet(item, index, array){
-//     console.log(item, index, array);
-// };
-
-// pets.forEach((item, index, array)=>{
-//     console.log(item, index, array);
-// });
-
-// const callCat = setTimeout(ohwa, 3000);
-
-// function ohwa() {
-//     for(let i in pets){
-//     console.log(i + ":" + pets[i]);
-// }
-    
-// };
-
-let pets = ["강아지", "고양이", "앵무새", "랫서팬더", "패릿"];
-let counter = 0;
-
-const oneCat = setInterval(()=> {
-    counter++
-    pets.forEach(item => console.log(counter + item));
-    if(counter >= 3 ){
-        clearInterval(oneCat, 1000);
+Menu.forEach((item, index)=>{
+    if(num4 == index){
+        console.log(`랜덤 숫자: ${num4}, Menu 숫자: ${index}, 추천 메뉴: ${item}`);
     }
-}, 1000);
+});
