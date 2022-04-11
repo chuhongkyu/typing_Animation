@@ -35,7 +35,7 @@ function recommend(){
     Menu.forEach((item, index)=>{
         if(num4 == index){
             // console.log(`랜덤 숫자: ${num4}, Menu 숫자: ${index}, 추천 메뉴: ${item}`);
-            document.querySelector(".recommend").innerHTML = `<h5>추천 메뉴는 <span style="color: red; font-size: 18px;">"${item}" </span>입니다.</h5>`;
+            document.querySelector(".recommend").innerHTML = `<h5><i class="fa-solid fa-utensils fa-2x"></i> 추천 메뉴는 <span style="color: red; font-size: 18px;">"${item}" </span>입니다.</h5>`;
         }
     });
     
