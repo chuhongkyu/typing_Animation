@@ -13,21 +13,15 @@ function recommend(){
 let Input = document.getElementById("input_panel");
 
 function giveMe(){
+    Input.value = Input.value.replace(/(\s*)/g, "");
     document.getElementById("Please_give").innerHTML = `음~~~<span style="color:orange;">${Input.value}</span> 주세요. <br>네~ 손님 <span style="color:orange;">${Input.value}</span> 준비해드릴게요 `;
-    console.log(Input.value);
-
     let found = MENU.find(element => element === Input.value);
-    // console.log(found);
 
-    if(Input.value =="" || Input.value === null){
+    if(!Input.value){
         document.getElementById("Please_give").innerHTML = `<span style="color:red;">주문할 메뉴를 입력하세요</span>`;
     }
+
     else if(!found){
         document.getElementById("Please_give").innerHTML = `음~~~<span style="color:orange;">${Input.value}</span> 주세요. <br>이봐요~ 손님 <span style="color:orange;">${Input.value}</span> 는 없어요ㅜㅜ `;
-        console.log("yeah");
     }
- 
 }
-
-
-
