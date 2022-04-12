@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>버거왕</title>
 </head>
 <style>
-    *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
     body{
         padding: 20px;
     }
@@ -23,10 +17,14 @@
         align-items: center;
         justify-content: flex-start;
         margin-bottom: 5px;
+        box-sizing: border-box;
+        padding: 10px;
     }
 
     .box h6,
     .box h5{
+        padding: 0;
+        margin: 0;
         font-size: 15px;
         margin-left: 10px;
     }
@@ -53,21 +51,25 @@
 <body>
     <h1>어서오세요~</h1>
     <h2>버거왕 입니다 ^^</h2>
+
     <div class="box">
-        <h5>*버거 메뉴 : </h5>
+        <h5>🍔 버거 메뉴 : </h5>
         <h6>치즈와퍼</h6>
         <h6>불고기와퍼</h6>
         <h6>새우버거</h6>
         <h6>치킨버거</h6>
         <h6>베이컨와퍼</h6>
     </div>
+
     <button onclick="recommend()">메뉴 추천해주세요</button>
     <hr>
+
     <div id="Recommend_panel"></div>
     <div class="shot">
         <input id="input_panel" type="text" placeholder="주세요" ><button onclick="giveMe()">주세요</button>
     </div>
     <div id="Please_give"></div>
-    <script src="test3.js"></script>
+    
+    <script src="js/bugerking.js"></script>
 </body>
 </html>
