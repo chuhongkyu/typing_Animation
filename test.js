@@ -34,3 +34,10 @@ const callInterval = setInterval(()=>{
 
 } ,1000);
 
+const Image = new Array();
+image[0] = "그림주소1";
+image[1] = "그림주소2";
+image[2] = "그림주소3";
+
+index = Math.floor(Math.random() * image.length);
+document.write("<embed src='"+image[index]+"'>");
