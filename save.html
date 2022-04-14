@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shop_me</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100;300;400&display=swap"
@@ -32,10 +32,34 @@
         </div>
 
         <div class="user-box">
-            <img src="img/shop_me_img/user.png" alt="">
+            <img id="userImg" src="img/shop_me_img/user.png" alt="">
         </div>
-
     </div>
-    
+
+    <div class="img_box_1">
+        <h1>안녕하세요^^</h1>
+    </div>
+    <div class="img_box_2">
+        <h1>카페 좋아요!!!</h1>
+    </div>
+
+
+    <script>
+        const ImgArr=["cafe_late","coffee","life","rest","user"];
+        
+        let path = "img/shop_me_img/";
+        let mark = ".png";
+
+        window.onload = changeImg();
+
+        function changeImg(){
+            let random = Math.floor(Math.random()*ImgArr.length);
+            let ImgBox = document.querySelector("#userImg");
+            ImgBox.src = path + ImgArr[random]+ mark;
+        }
+
+        setInterval(changeImg, 2000);
+        
+    </script>
 </body>
 </html>
