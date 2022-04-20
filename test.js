@@ -1,43 +1,23 @@
-const catNames = ["나비야", "고양시", "길냥이"]; 
+//객체란 무엇일까?
 
-let counter = 0;
+const menu = ["아메리카노", "카페라떼", "사과쥬스"];
+const price =["1,500원", "1,800원", "3,000원"];
 
-// function callName(){
-//     for(let i =0; i< catNames.length; i++){
-//         console.log(catNames[i])
-//     }
-//     counter++;
-//     console.log(counter, "번");
+function printMessage(menu, price, i){
+  console.log(`손님 ${menu[i]}는 ${price[i]} 입니다.`);
+}
 
-//     if(counter == 3){
-//     clearInterval(callInterval);
-//     console.log("종료")
-//  }
+printMessage(menu, price, 1);
+
+// for (let index = 0; index < menu.length; index++) {
+//   printMessage(menu, price, index);
 // }
-   
-// const callInterval = setInterval(callName ,3000);
 
-const callInterval = setInterval(()=>{
+// menu.forEach((item, index) => {
+//   printMessage(menu, price, index);
+  
+// });
 
-     for(let i =0; i< catNames.length; i++){
-        console.log(catNames[i])
-    }
-
-    if(counter >=2 ){
-    clearInterval(callInterval);
-    console.log("종료")
-    }
-
-    counter++;
-    console.log(counter, "번");
-
-
-} ,1000);
-
-const Image = new Array();
-image[0] = "그림주소1";
-image[1] = "그림주소2";
-image[2] = "그림주소3";
-
-index = Math.floor(Math.random() * image.length);
-document.write("<embed src='"+image[index]+"'>");
+// for(let i in menu){
+//   printMessage(menu, price, i);
+// }

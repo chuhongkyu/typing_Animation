@@ -225,18 +225,24 @@
                 var i,
                     tabcontent,
                     tablinks;
+
                 tabcontent = document.getElementsByClassName("tabcontent");
+
                 for (i = 0; i < tabcontent.length; i++) {
                     tabcontent[i].style.display = "none";
                 }
+
                 tablinks = document.getElementsByClassName("tablink");
+
                 for (i = 0; i < tablinks.length; i++) {
                     tablinks[i].style.backgroundColor = "";
                 }
+
                 document
                     .getElementById(cityName)
                     .style
                     .display = "block";
+
                 elmnt.style.backgroundColor = color;
 
             }
@@ -260,6 +266,7 @@
                 let i;
                 let slides = document.getElementsByClassName("mySlides");
                 let dots = document.getElementsByClassName("dot");
+
                 if (n > slides.length) {
                     slideIndex = 1
                 }
@@ -274,6 +281,7 @@
                         .className
                         .replace(" active", "");
                 }
+                
                 slides[slideIndex - 1].style.display = "block";
                 dots[slideIndex - 1].className += " active";
             }
