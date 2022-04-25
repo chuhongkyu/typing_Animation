@@ -17,6 +17,9 @@ const orderText = document.querySelector(".order-text");
 const answerText = document.querySelector(".answer-text");
 const inputPanel = document.querySelector("#order-panel");
 
+
+
+
 function howMuchIsit(){
   let orderName = parseInt(inputPanel.value) -1;
 
@@ -28,3 +31,19 @@ function howMuchIsit(){
     alert("메뉴를 입력해주세요. 메뉴는 3번까지 있습니다.");
   }
 }
+
+
+const selectBox = document.getElementById("select-box");
+const selectBtn = document.getElementById("select-btn");
+const priceBox = document.querySelector(".select-text");
+
+
+for (let i = 0; i < menu.length; i++) {
+    selectBox.innerHTML += `<option value=${i} selected>${menu[i].name}</option>`;
+}
+
+selectBtn.addEventListener("click", ()=>{
+  priceBox.innerHTML = `<h1>${menu[selectBox.value].name}는 ${menu[selectBox.value].price}원 입니다.</h1>`;
+});
+
+
