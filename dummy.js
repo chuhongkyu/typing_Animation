@@ -1,23 +1,15 @@
-// for (let i = 1; i <= 50; i++) {
-//   let num = i.toString();
-//   let result = "";
-//   for(let j = 0; j < num.length; j++){
-//     if(num[j] == "3" || num[j] === "6" || num[j] === "9"){
-//       result+= "짝"
-//     }
-//   }
-//   console.log(result.length > 0 ? result: i);
-// }
+let calc = [50000, 10000, 5000, 1000, 500, 100];
 
-let n = 15
-let isPrime = true
+function countMoney(money) {
+  let pay = money;
+  let result =" ";
 
-if (n === 1){// 1은 소수가 아님 
-    isPrime = false
+  for (let i = 0; i < calc.length; i++) {
+       result = parseInt(pay / calc[i]);
+       pay = parseInt(pay % calc[i])
+       console.log(`${calc[i]} X ${result}`);
+    }
+  
 }
-for(let i=2;i<n;i++){
-  if(n % i == 0){
-    isPrime =  false 
-  }
-}
-console.log(isPrime)
+
+countMoney(12300);
