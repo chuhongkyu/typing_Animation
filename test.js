@@ -1,49 +1,24 @@
-// 객체 연습
+const battery = document.getElementById("battery");
 
-const menu = [{
-  name: "민트초코",
-  price: 5000
-},
-{
-  name: "바닐라라떼",
-  price: 4500
-},
-{
-  name: "아메리카노",
-  price: 2000
-}]
+let batteryI = "fa-battery-"
 
-const orderText = document.querySelector(".order-text");
-const answerText = document.querySelector(".answer-text");
-const inputPanel = document.querySelector("#order-panel");
+function energy() {
+  setTimeout(()=>{
+    battery.classList.remove(`${batteryI}empty`);
+    battery.classList.add(`${batteryI}quarter`);
+  }, 1000);
 
+  setTimeout(()=>{
+    battery.classList.remove(`${batteryI}quarter`);
+    battery.classList.add(`${batteryI}half`);
+  }, 2000);
 
-
-
-function howMuchIsit(){
-  let orderName = parseInt(inputPanel.value) -1;
-
-  if(orderName < menu.length && orderName > -1){
-    orderText.innerHTML = `<h1>${menu[orderName].name }는 얼마인가요?</h1>`;
-    setTimeout(()=>{answerText.innerHTML = `<h4>${menu[orderName].name}는 ${menu[orderName].price}원 입니다.</h4>`;}, 1000);
-  }
-  else {
-    alert("메뉴를 입력해주세요. 메뉴는 3번까지 있습니다.");
-  }
+  setTimeout(()=>{
+    battery.classList.remove(`${batteryI}half`);
+    battery.classList.add(`${batteryI}full`);
+  }, 3000);
+  
 }
 
-
-const selectBox = document.getElementById("select-box");
-const selectBtn = document.getElementById("select-btn");
-const priceBox = document.querySelector(".select-text");
-
-
-for (let i = 0; i < menu.length; i++) {
-    selectBox.innerHTML += `<option value=${i} selected>${menu[i].name}</option>`;
-}
-
-selectBtn.addEventListener("click", ()=>{
-  priceBox.innerHTML = `<h1>${menu[selectBox.value].name}는 ${menu[selectBox.value].price}원 입니다.</h1>`;
-});
-
-
+energy();
+setInterval(energy, 4000);
