@@ -1,24 +1,32 @@
-const battery = document.getElementById("battery");
 
-let batteryI = "fa-battery-"
+const Title = document.querySelector(".title");
+const Subttitle = document.querySelector(".subtitle");
+const Textarea = document.getElementById("textarea");
+let Table = document.getElementById("table") ;
 
-function energy() {
-  setTimeout(()=>{
-    battery.classList.remove(`${batteryI}empty`);
-    battery.classList.add(`${batteryI}quarter`);
-  }, 1000);
+    
 
-  setTimeout(()=>{
-    battery.classList.remove(`${batteryI}quarter`);
-    battery.classList.add(`${batteryI}half`);
-  }, 2000);
+async function comeOne(){
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+    const result = await response.json();
+    Title.innerHTML = result.title;
+    Subttitle.innerHTML = result.body;
+    Textarea.innerHTML = result.body;
 
-  setTimeout(()=>{
-    battery.classList.remove(`${batteryI}half`);
-    battery.classList.add(`${batteryI}full`);
-  }, 3000);
-  
+    console.log(response);
+    console.log(result);
 }
+comeOne();
 
-energy();
-setInterval(energy, 4000);
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(json2 => {
+      for (let i = 0; i < json2.length; i++) {
+         Table.innerHTML += `<tr>
+                                <td>${json2[i].id}</td>
+                                <td>${json2[i].title}</td>
+                                <td>${json2[i].userId}</td>
+                            </tr>`;
+      }
+    });

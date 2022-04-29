@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-    <script defer src="test.js"></script>
-    <style>
-        #battery {
-            font-size: 500px;
-        }
-      
-        
-    </style>
-</head>
-<body>
-    <h2>Star Rating</h2>
-    <div id="battery" class="fas fa-battery-empty"></div>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+        <script defer="defer" src="test.js"></script>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            td,
+            th,
+            tr {
+                border: 1px solid #7c7b7b;
+                text-align: left;
+                padding: 8px 10px;
+                word-break : normal;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="title"></h1>
+        <h2 class="subtitle"></h2>
+        <textarea name="name" id="textarea" cols="55" rows="10"></textarea>
+        <br>
+        <h1>게시판 (TABLE 로 For문 돌리면 게시판)</h1>
+        <table>
+            <thead>
+                <th>NO</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </thead>
+            <tbody id="table">
 
-    
-</body>
+            </tbody >
+        </table>
+
+    </body>
 </html>
