@@ -124,11 +124,11 @@ img {
   }
 }
 
-h3{
+h3 {
   margin-top: 25px;
 }
 
-h3 a{
+h3 a {
   text-decoration: none;
   color: white;
   font-size: 25px;
@@ -137,12 +137,12 @@ h3 a{
   border-radius: 25px;
 }
 
-h3:hover{
+h3:hover {
   transform: translateY(-3px);
   transition: 0.5s;
 }
 
-h3 a:hover{
+h3 a:hover {
   background-color: white;
   color: goldenrod;
   transition: 0.5s;

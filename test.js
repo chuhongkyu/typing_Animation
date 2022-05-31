@@ -6,16 +6,24 @@ let Table = document.getElementById("table") ;
 
     
 
-async function comeOne(){
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
-    const result = await response.json();
-    Title.innerHTML = result.title;
-    Subttitle.innerHTML = result.body;
-    Textarea.innerHTML = result.body;
+// async function comeOne(){
+//     const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//     const json = response.json()
+//     Title.innerHTML = json.title;
+//     Subttitle.innerHTML = json.body;
+//     Textarea.innerHTML = json.body;
 
-    console.log(response);
-    console.log(result);
+//     // console.log(response);
+//     // console.log(result);
+// }
+
+const comeOne = async()=>{
+  const json = await (await fetch('https://jsonplaceholder.typicode.com/posts/1')).json();
+    Title.innerHTML = json.title;
+    Subttitle.innerHTML = json.body;
+    Textarea.innerHTML = json.body;
 }
+
 comeOne();
 
 
